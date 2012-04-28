@@ -51,7 +51,7 @@
 	background-color : black;
 	color: #DFDFDF;
 	float : right;
-	width : 74%;
+	width : 75%;
 	font-family:"Times New Roman";
 }
 
@@ -90,7 +90,7 @@
 	min-height: 5%;
 	text-align: center;
 	background-color: gray;
-	color: white;
+	color: #DFDFDF;
 	font-family: Terminal;
 	font-size:small;
 }

@@ -12,7 +12,7 @@
 	width : 100%;
 	min-height: 20%;
 	padding: 0%;
-	font-family:Terminal;
+	font-family:Terminal, Fixedsys;
 }
 
 #header h1
@@ -24,11 +24,12 @@
 {
 	background-color: red;;
 	float: left;
-	width : 25%;
+	width : 22%;
+	padding: 1%;
 	border-right:black;
 	min-height: 75%;
 	position:absolute;
-	font-family:Terminal;
+	font-family:Terminal, Fixedsys;
 }
 
 #navigation li
@@ -51,8 +52,9 @@
 	background-color : black;
 	color: #DFDFDF;
 	float : right;
-	width : 75%;
+	width : 72%;
 	text-indent: 1%;
+	padding: 2%;
 	font-family:"Times New Roman";
 }
 
@@ -92,6 +94,6 @@
 	text-align: center;
 	background-color: gray;
 	color: #DFDFDF;
-	font-family: Terminal;
+	font-family: Terminal, Fixedsys;
 	font-size:small;
 }

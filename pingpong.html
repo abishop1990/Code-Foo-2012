@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="design.css" />
+        <title>Alan Bishop's IGN Code Foo Site - Ping Pong Problem</title>
+    </head>
+    <body>
+<div id = "wrapper">   
+    	<div id = "header"><h1>Alan Bishop's IGN Code Foo Site</h1></div>
+    	<div id = "navigation">
+    		<ul>
+    		<li><a href ="index.html">About Me</a></li>
+    		<li><a href = "pingpong.html">Ping Pong Problem</a></li>
+    		<li><a href = "license.html">License Plate Problem</a></li>
+    		<li><a href = "liquid.html">What is a Liquid Layout?</a></li>
+    		<li><a href = "connect4.html">Connect 4 Game</a></li>
+    		</ul>
+    		</div>
+    	<div id = "content">
+    		<h2>"How many ping pong balls would it take to fill an average-sized school bus? 
+    			Describe each step in your thought process."</h2>
+
+<p>To solve this, the first thing I would think to do is to find the volume of the interior of the average school bus. 
+	This requires a bit of research since this isn't common knowledge. 
+	<a href ="http://ntl.bts.gov/lib/10000/10600/10694/MBTC1054-1.pdf">According to the BLS</a> a school bus has a width of 2.4 meters,
+	a length of 11.1 meters and a height of 3.3 meters.</p>
+
+<p>For the sake of simplicity, we shall assume the following:</p>
+<ol>
+<li>These dimensions are of the interior (they're not but those dimensions are not easily identifiable, 
+	and there are many factors which make this impossible to determine without much research and some advanced calculus).</li>
+<li>The school bus is a rectangle, and we are considering a bus that does not have a rounded top.</li>
+<li>All interior equipment is removed, there are no seats, steering wheels, etc.</li>
+</ol>
+
+
+<p>Next, I would want to find the volume of a singular ping pong ball. This is pretty easy since 
+	this is widely known information. According to the International Table Tennis Federation, a 
+	standard ball is 40 mm in diameter. With this information, we must also assume that when placing 
+	balls in, since they are round, they will only contact another ball in one place, the top or side, 
+	thus we can assume that a ball has an effective volume of a cube. Therefore we have an effective ball volume of 
+	64000 cubic-millimeters, a height of 40 mm, a width of 40 mm and a length of 40 mm.</p>
+
+<p>For this I am going to use the dimensions to determine how many balls will fit into the bus rather 
+than the volume. The reason for this is that you can't stack the balls any higher than the height, 
+you can't stack the balls and longer than the length, etc. If the dimensions in ping-pong balls don't 
+come to a roudn number, you must round down, because this is the limit to how many whole balls you can 
+fit into the bus.</p>
+
+<p>Height in “effective” ping-pong balls = 3.3 meters/40 mm (.04 meters) = 82.5 ping-pong balls</p>
+<p>Length in “effective” ping-pong balls = 11.1 meters/40mm (.04 meters) =  277.5 ping-pong balls</p>
+<p>Width in “effective” ping-pong balls = 2.4 meters/40mm (.04 meters) = 60 ping-pong balls.</p>
+
+<p>Now we have a very simple volume equation for a rectangular box (height * length * width):</p>
+
+<p>82 ping-pong-balls * 277 ping-pong balls * 60 ping-pong balls = 1362840</p>
+
+<p><strong>So therefore the total number of ping-pong balls that would fit in the average 
+	standardized school bus, based upon the above assumptions is 1,362,840.</strong></p>
+
+
+    </div>
+    <div id = "footer"><p>Page created by Alan Bishop for IGN Code-Foo program. April 2012</p></div>	
+   </div>
+    </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="design.css" />
+        <title>Alan Bishop's IGN Code Foo Site - Connect 4 Problem</title>
+    </head>
+    <body>
+<div id = "wrapper">   
+    	<div id = "header"><h1>Alan Bishop's IGN Code Foo Site</h1></div>
+    	<div id = "navigation">
+    		<ul>
+    		<li><a href ="index.html">About Me</a></li>
+    		<li><a href = "pingpong.html">Ping Pong Problem</a></li>
+    		<li><a href = "license.html">License Plate Problem</a></li>
+    		<li><a href = "liquid.html">What is a Liquid Layout?</a></li>
+    		<li><a href = "connect4.html">Connect 4 Game</a></li>
+     		</ul>
+    		</div>
+    	<div id = "content">
+		<h2>"Programmatically create a game of Connect 4™ with one AI-controlled opponent and a human-controlled player."</h2>
+
+<p><strong>Note: Although I did not have time to finish the program, I did create a design doc for if I wanted to 
+	implement it later.</strong></p>
+
+
+<p>General Game Rules:
+<ul>
+<li>Connect 4 is a 7 slot wide, 6 slot high game</li>
+<li>There are 2 players, one red, one black</li>
+<li>Players take turns placing one in a slot until they have 4 adjacent pieces in a “row” either 
+	horizontally, verically or diagonally</li>
+</ul></p>
+<p>
+Basic Structure of Program (Assume no AI for the moment):
+<ul>
+<li>Game board starts out empty</li>
+<li>In a loop until game has been won or no more moves available:
+	<ul>
+	<li>Switch players (on first move this will set to player 1)</li>
+	<li>Wait for current player to place a piece
+		<ul>
+		<li>If player clicks somewhere, check if it is a legal move, if so, a piece is placed</li>
+		</ul></li>
+	</ul>
+</li>
+<li>When game is over the game will prompt for another game
+	<ul>
+	<li>If yes restart game</li>
+	<li>If no, exit program (or return to a title screen or do whatever)</li>
+	</ul>
+</li>
+</ul>
+</p>
+
+<p>The GUI (Brainstorming, some of this may not be implemented):
+<ul>
+<li>Should start with a white background, a simple window with OS look-and-feel</li>
+<li>Yellow box with circular holes</li>
+<li>Current player's turn above in large text</li>
+<li>Sidebar on right with new game and help buttons</li>
+<li>When hovering above the game board, make the piece appear (only if it's the user's turn)</li>
+<li>If the user clicks and they are above a column and it is legal they can move</li>
+<li>Notification box for game-over, prompting user for a new game (or just an okay box)</li>
+</ul>
+</p>
+
+<p>Logic-side:</p>
+<p>External loop
+<ul>
+	<li>Set board to empty</li>
+	<li>Setup all game flags/boolean values to false</li>
+	<li>Run main game loop</li>
+</ul></p>
+
+<p>Main game loop (Pure logic no GUI)
+	<ul>
+	<li>Get move</li>
+	<li>Check for game over
+	<ul>
+		<li>If so break from game loop</li>
+	</ul></li>
+	<li>Change players</li>
+	</ul>
+</p>
+
+<p>Conditions for game over:
+<ul>
+	<li>Board is full (no moves available, draw)</li>
+	<li>Player 1 or 2 wins
+		<ul>
+		<li>3 Possible ways: Diagonal, Vertical, Horizontal</li>
+		</ul>
+	</li>
+</ul>
+</p>
+
+<p>Making a move:
+	<ul>
+	<li>Validate move</li>
+	<li>Place piece</li>
+	<li>Check if the board is full, if so set a boolean value for draw</li>
+	<li>Check if player wins, if so set a boolen value for player win</li>
+	</ul>
+</p>
+
+<p>AI Design:
+<ul>
+<li>Search for best available move (based upon priority):
+<ol>	
+<li>If AI has 3 in a row, place fourth</li>
+<li>If opponent has 3 in a row attempt to block
+<ul>
+<li>If there are multiple 3 in a row, then block first found</li>
+</ul></li>
+<li>If opponent has 2 in a row and 1 on other side, block it</li>
+<li>Search for longest consecutive sequence of AI (1 or 2) and place</li>
+<li>If AI has no sequence, place to block player's 2 in a row</li>
+</ol></li>
+<li>Issues with this method:
+	<ul>
+	<li>How can I set the AI to place 4 in a row on both sides? (with a hole to fill)</li>
+	<li>How will AI keep track of diagonals and stacking strategy?</li>
+	<li>Will this be competitive to user?</li>
+	</ul>
+</li>
+</ul>
+</p>
+
+
+    			
+</div>
+<div id = "footer"><p>Page created by Alan Bishop for IGN Code-Foo program. April 2012</p></div>
+</div>
+    </body>
+</html>

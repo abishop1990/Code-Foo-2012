@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="design.css" />
+        <title>Alan Bishop's IGN Code Foo Site - License Plate Problem</title>
+    </head>
+    <body>
+<div id = "wrapper">   
+    	<div id = "header"><h1>Alan Bishop's IGN Code Foo Site</h1></div>
+    	<div id = "navigation">
+    		<ul>
+    		<li><a href ="index.html">About Me</a></li>
+    		<li><a href = "pingpong.html">Ping Pong Problem</a></li>
+    		<li><a href = "license.html">License Plate Problem</a></li>
+    		<li><a href = "liquid.html">What is a Liquid Layout?</a></li>
+    		<li><a href = "connect4.html">Connect 4 Game</a></li>
+    		</ul>
+    		</div>
+    	<div id ="content">
+<h2>"You own a license plate manufacturing company. Given a population, determine the 
+	simplest pattern that will produce enough unique plates. Since all the plates that 
+	match the pattern will be generated, find the pattern that produces the least excess 
+	plates. Use a combination of letters (A-Z) and numbers (0-9)."</h2>
+	
+<p><strong><font color ="red">
+	I implemented this program using a Java Applet, click here to go to that.
+	</font></strong></p>
+
+<p>To solve this first I thought to find a basic formula for the problem. The most obvious thing to do in my head is to list all the variables:</p>
+
+<p>Population - (I can use P to represent this)</p>
+<p>Letters - (I can use L to represent this)</p>
+<p>Numbers - (I can use L to represent this)</p>
+<p>Excess Plates - (I can use E to represent this)</p>
+
+<p>From this, we have a 4 variable equation, where there are multipliers for each letter and number of 26 and 10. Since this is a problem of permutations
+(individual unique sequences) I use a formula that involves exponents:</p>
+
+<p>P + E = 26<sup>L</sup> * 10<sup>N</sup></p>
+
+<p>So for a given population this means the excess will be:</p>
+
+<p>E = 26<sup>L</sup>*10<sup>N</sup> – P</p>
+
+<p>Since I don't know set values for E, P, L or N here I am looking for an example:</p>
+
+<p>Example: Population is 155</p>
+<p>E = 26<sup>L</sup>*10<sup>N</sup> – 155</p>
+<p>Here I am trying to determine what are the optimal values of L and N to make E small.</p>
+	
+
+<p>Through trial and error I determine that 26<sup>1</sup>*10<sup>1</sup> = 260 is the optimal value, which will result in an excess value of 105.</p>
+
+<p>From this I can make a determination that I will alternate increasing the values of L and N until I find a medium that is the closest to the value 
+that I can get. Using this information I create a matrix to find the best solution:</p>
+
+<table>
+	<tr>
+		<td></td>
+		<td>10<sup>0</sup></td>
+		<td>10<sup>1</sup></td>
+		<td>10<sup>2</sup></td>
+		<td>10<sup>3</sup></td>
+		<td>10<sup>4</sup></td>
+		<td>10<sup>5</sup></td>
+	</tr>
+	<tr>
+		<td>26<sup>0</sup></td>
+		<td>0</td>
+		<td>10</td>
+		<td>100</td>
+		<td>1000</td>
+		<td>10000</td>
+		<td>100000</td>
+	</tr>
+	<tr>
+		<td>26<sup>1</sup></td>
+		<td>26</td>
+		<td>260</td>
+		<td>2600</td>
+	 	<td>26000</td>
+		<td>260000</td>
+		<td>2600000</td>
+	</tr>
+	<tr>
+		<td>26<sup>2</sup></td>
+		<td>676</td>
+		<td>6760</td>
+		<td>67600</td>
+		<td>676000</td>
+		<td>6760000</td>
+		<td>67600000</td>
+	</tr>
+	<tr>
+		<td>26<sup>3</sup></td>
+		<td>17576</td>
+		<td>175760</td>
+		<td>1757600</td>
+		<td>17576000</td>
+		<td>175760000</td>
+		<td>1757600000</td>
+	</tr>
+</table>
+
+<p>Obviously this gets big very fast, but it provides a way of setting intervals to place a population in. If you look at the table, it produces diagonals 
+going from the top to bottom, right to left, where you can follow to look for a larger number. I coincedentally had encountered something similar with 
+rational number enumeration in my programming languages class recently, so I can see that this can definitely be programmed.  Using this information here 
+is some basic psuedo-code for this problem:</p>
+<p>How to calculate the best license plate combination:</p>
+<ol>
+<li>Start from the second cell (10<sup>1</sup>)</li>
+<li>In a loop:
+<ol>
+<li>Check if the value is less than the current value, if it is break</li>
+<li>Move down one cell and left one cell if possible (divide by 10, multiply by 26), if not, go to the beginning of the next diagonal. This is done by just 
+adding one to the exponent value of the letters, changing the numbers exponent to this and then changing letters exponent to 0.</li>
+<li>The current position is the number of letters and numbers to use</li>
+<li>To calculate the excess plates, subtract the population from the value in the cell</li>
+</ol></li>
+</ol>
+
+</div>
+<div id = "footer"><p>Page created by Alan Bishop for IGN Code-Foo program. April 2012</p></div>	
+</div>
+    </body>
+</html>

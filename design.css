@@ -69,6 +69,10 @@
 	font-size:large;
 }
 
+#content h3
+{
+	text-align: center;
+}
 
 #content table
 {

@@ -25,7 +25,7 @@
 {
 	background-color: red;;
 	float: left;
-	width : 22%;
+	width : 23%;
 	padding: 1%;
 	border-right:black;
 	min-height: 75%;
@@ -54,7 +54,6 @@
 	color: #DFDFDF;
 	float : right;
 	width : 72%;
-	text-indent: 1%;
 	padding: 2%;
 	font-family:"Times New Roman";
 	position: relative;

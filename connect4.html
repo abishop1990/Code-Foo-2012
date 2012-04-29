@@ -14,26 +14,25 @@
     		<li><img src="star.gif" alt="star" /><a href ="index.html">About Me</a></li>
     		<li><img src="star.gif" alt="star" /><a href = "pingpong.html">Ping Pong Problem</a></li>
     		<li><img src="star.gif" alt="star" /><a href = "license.html">License Plate Problem</a></li>
-    		<li><img src="star.gif" alt="star" /><a href = "liquid.html">What is a Liquid Layout?</a></li>
+    		<li><img src="star.gif" alt="star" /><a href = "liquid.html">Liquid Layout</a></li>
     		<li><img src="star.gif" alt="star" /><a href = "connect4.html">Connect 4 Game</a></li>
     		</ul>
     		</div>
     	<div id = "content">
 		<h2>"Programmatically create a game of Connect 4™ with one AI-controlled opponent and a human-controlled player."</h2>
 
-<p><strong>Note: Although I did not have time to finish the program, I did create a design doc for if I wanted to 
-	implement it later.</strong></p>
+<p><strong>Note: Although I did not have time to finish the program, below is my thought process on the design of a program:</strong></p>
 
 
-<p>General Game Rules:</p>
+<h3>General Game Rules:</h3>
 <ul>
 <li>Connect 4 is a 7 slot wide, 6 slot high game</li>
 <li>There are 2 players, one red, one black</li>
 <li>Players take turns placing one in a slot until they have 4 adjacent pieces in a “row” either 
 	horizontally, verically or diagonally</li>
 </ul>
-<p>
-Basic Structure of Program (Assume no AI for the moment):</p>
+<h3>
+Basic Structure of Program:</h3>
 <ul>
 <li>Game board starts out empty</li>
 <li>In a loop until game has been won or no more moves available:
@@ -53,7 +52,7 @@ Basic Structure of Program (Assume no AI for the moment):</p>
 </li>
 </ul>
 
-<p>The GUI (Brainstorming, some of this may not be implemented):</p>
+<h3>The GUI:</h3>
 <ul>
 <li>Should start with a white background, a simple window with OS look-and-feel</li>
 <li>Yellow box with circular holes</li>
@@ -64,7 +63,7 @@ Basic Structure of Program (Assume no AI for the moment):</p>
 <li>Notification box for game-over, prompting user for a new game (or just an okay box)</li>
 </ul>
 
-<p>Logic-side:</p>
+<h3>Logic-side:</h3>
 <p>External loop</p>
 <ul>
 	<li>Set board to empty</li>
@@ -101,7 +100,7 @@ Basic Structure of Program (Assume no AI for the moment):</p>
 	</ul>
 
 
-<p>AI Design:</p>
+<h3>AI Design:</h3>
 <ul>
 <li>Search for best available move (based upon priority):
 <ol>	

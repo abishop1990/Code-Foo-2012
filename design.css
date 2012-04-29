@@ -5,6 +5,7 @@
 	width: 100%;	
 }
 
+
 #header
 {
 	background-color : gray;
@@ -56,6 +57,7 @@
 	text-indent: 1%;
 	padding: 2%;
 	font-family:"Times New Roman";
+	position: relative;
 }
 
 #content a
@@ -71,7 +73,7 @@
 
 #content h3
 {
-	text-align: center;
+	text-align: justify;
 }
 
 #content table
